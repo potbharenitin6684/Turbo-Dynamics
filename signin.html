@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignIn</title>
+  </head>
+  <style>
+    body > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
+      width: 100%;
+      background-image: url(//img.gkbcdn.com/s3/bn/2203/signin-6239450f2b40c91b9c8a4526.jpg);
+    }
+    form {
+      padding: 0px 30px;
+      margin: auto;
+      border: 0px solid;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      background-color: white;
+      border-radius: 3px;
+    }
+    #btn1 {
+      background-color: rgb(0, 102, 255);
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 0px;
+      color: white;
+    }
+    form > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    form > input {
+      width: 97%;
+      padding: 5px;
+      border: 1px solid gray;
+    }
+    #box2 > div {
+      font-size: 15px;
+      padding: 10px;
+      margin-bottom: -35px;
+      margin-top: 5px;
+    }
+    form > span {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    span > h5 > a {
+      text-decoration: none;
+      color: black;
+    }
+    span > h5 {
+      font-weight: bolder;
+    }
+    #box1 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    #box1 > input {
+      width: 50%;
+      padding: 5px;
+    }
+    #box1 > button {
+      padding: 5px 0px;
+      width: 40%;
+      border: dashed;
+    }
+    #para {
+      color: red;
+      text-align: center;
+      font-weight: bold;
+      font-size: 12px;
+    }
+  @media all and (min-width:320px) and (max-width:479px) {
+    body > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: none;
+      width: auto;
+      height: 500px;
+    }
+    }
+  </style>
+  <body>
+    <div>
+      <form action="">
+        <span>
+          <h5>Create your account</h5>
+          <h5><a href="singup.html">Sign Up</a></h5>
+        </span>
+        <input
+          type="text"
+          name=""
+          id="name"
+          placeholder="Nick Name"
+        /><br /><br />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email address"
+        /><br /><br />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+        /><br /><br />
+        <div id="box1">
+          <input type="number" id="accesscode" placeholder="Access code" />
+          <button>1234</button>
+        </div>
+        <div id="box2">
+          <div>
+            <input id="checkbox" type="checkbox" />
+            <label for=""
+              >I agree to Geekbuying's Terms of Use & Privacy Policy.</label
+            >
+          </div>
+        </div>
+        <br />
+        <p id="para"></p>
+        <button id="btn1">Create account</button><br /><br />
+      </form>
+    </div>
+  </body>
+  <script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", userdata);
+    let userInfo = JSON.parse(localStorage.getItem("userData")) || [];
+    function userdata() {
+      event.preventDefault();
+      let userData = {
+        name: document.querySelector("#name").value,
+        email: document.querySelector("#email").value,
+        password: document.querySelector("#password").value,
+      };
+      let code = document.querySelector("#accesscode").value;
+      let btn = document.querySelector("#box1>button").innerText;
+
+      if (
+        checkinfo(userData.email, userData.password) === true &&
+        code === btn
+      ) {
+        userInfo.push(userData);
+        console.log(userInfo);
+        localStorage.setItem("userData", JSON.stringify(userInfo));
+      } else {
+        if (
+          userData.email === "" ||
+          userData.password === "" ||
+          userData.name === "" ||
+          code !== btn
+        ) {
+          document.querySelector("#para").innerText =
+            "Fill All The Details Accurately";
+        } else {
+          document.querySelector("#para").innerText = "Account already Exist";
+        }
+        // alert("Account already Exist");
+      }
+    }
+
+    function checkinfo(email, password) {
+      let filter = userInfo.filter(function (ele) {
+        return ele.email === email && ele.password === password;
+      });
+      let x = 1;
+      if (email === "" && password === "") {
+        return x;
+      } else {
+        if (filter.length > 0) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    }
+  </script>
+</html>
