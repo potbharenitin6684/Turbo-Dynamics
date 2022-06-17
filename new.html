@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body > div:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 14px;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
+        rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
+        rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+      width: 100%;
+    }
+    #main {
+      display: flex;
+      flex-direction: row;
+      width: 70%;
+      margin: auto;
+    }
+    #category {
+      width: 60%;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      padding: 10px;
+      margin-right: 10px;
+      height: fit-content;
+    }
+    #submain {
+      display: flex;
+      flex-direction: column;
+    }
+    #sort {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      margin-bottom: 10px;
+      width: 83.5%;
+      padding-left: 10px;
+    }
+    #sort > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    #sort button {
+      margin-right: 10px;
+      margin-left: 10px;
+      font-size: 13px;
+    }
+    #sort p {
+      font-size: small;
+      margin-right: 10px;
+    }
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, auto);
+      width: 85%;
+      gap: 10px;
+      height: auto;
+    }
+    #container img {
+      width: 100%;
+    }
+    #container > div > img + img {
+      width: 50%;
+      position: relative;
+      bottom: 140px;
+      left: 72px;
+    }
+    #container > div > p {
+      width: 135px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin-top: -50px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    #container > div > h4 {
+      margin-top: -5px;
+      margin-bottom: -4px;
+    }
+    #container {
+      text-decoration: none;
+      color: black;
+    }
+
+    #container > div {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      width: 80%;
+      padding: 10px;
+      height: auto;
+      background-color: white;
+    }
+    #container > div > button {
+      margin-top: 15px;
+      width: 100%;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgb(0, 105, 252);
+      color: white;
+    }
+    @media all and (min-width: 480px) and (max-width: 780px) {
+      #category {
+        display: none;
+      }
+      #container{
+        margin-left: 50px;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        gap: 25px;
+      }
+      #container > div > p {
+      font-weight: 900;
+    }
+      body>div:first-child{
+       width: 850px;
+
+      }
+      #sort{
+      width: 100%;
+      margin-left: 15px;
+      }
+      #sort p{
+        font-size: 13px;
+        font-weight: 900;
+      }
+    }
+
+    @media all and (min-width: 320px) and (max-width: 479px) {
+      #category {
+        display: none;
+      }
+      #container{
+        margin-left: 40px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows:auto;
+        gap: 25px;
+      }
+      body>div:first-child{
+       width: 120%;
+      }
+      #sort{
+      display: none;
+      }
+    }
+  </style>
+  <body>
+    <div>
+      <h1>New Arrival</h1>
+    </div>
+    <div id="main">
+      <div id="category">
+        <h3 style="font-weight: 700">All categories</h3>
+        <p>Smart Home & Garden</p>
+        <p>Consumer Electronic</p>
+        <p>Sports & Outdoors</p>
+        <p>Toys &Hobbies</p>
+        <p>Automobile & Motorcycles</p>
+        <p>Wearable Devices</p>
+        <p>TV Boxes & Mini Pcs</p>
+        <p>Security Systems</p>
+        <p>Phone & Accessories</p>
+        <p>Computer & tablets</p>
+      </div>
+      <div id="submain">
+        <div id="sort">
+          <div>
+            <p>New Arrived :</p>
+            <button>7 days</button>
+            <button>15 days</button>
+            <button>30 days</button>
+          </div>
+          <div>
+            <p>Filter :</p>
+            <button>Ship From</button>
+            <input type="checkbox" name="" id="" />
+            <p>on sale</p>
+            <input type="checkbox" name="" id="" />
+            <p>Free Shipping Only.</p>
+            <p>Price :</p>
+            <button>Min</button>
+            <p>-</p>
+            <button>Max</button>
+          </div>
+          <div>
+            <p>Sort By:</p>
+            <button>Best Match</button>
+            <button>New Arrival</button>
+            <button>Price</button>
+          </div>
+        </div>
+        <div id="container"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let productdata = [
+      {
+        img: "https://img.gkbcdn.com/p/2022-05-30/SCULPFUN-30L-Min-Air-Pump-Compressor-EU-Plug-501434-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹7085.55",
+        info: "SCULPFUN 30L/Min 200-240V Air Pump Compressor for Laser Engraver, Adjustable Speed Low Noise Low Vibration - EU Plug",
+        itemCode: "501434",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2022-06-07/MIYOO-Mini-32GB-3000-Games-Retro-Handheld-Game-Console-Blue-501578-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹4025.53",
+        info: "Miyoo Mini 32GB Handheld Game Console, 3000 Games, 2.8Inch IPS Screen, One Click Archive, 4-5 Hours Battery Life, CPS FBA FC GB GBA GBC WSC SFC MD PS Simulators, Blue",
+        itemCode: "501578",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2022-06-07/Creality-Smart-Kit-2-0-with-8G-TF-Card-501574-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹5313.96",
+        info: "Creality Smart Kit 2.0 Wifi Box, Cloud Slice, Cloud Printing, WiFi Box , 1080P Web Camera, Remote Control",
+        itemCode: "501574",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2022-05-27/a69f6f8df4584396aa09a7e4626d9f79-501364-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹1207.10",
+        info: "Mini Wireless Camera Real 1080P Wifi Camera Home Nanny Tiny Cam Baby with Night Vision Motion Cell Phone App Detection - Black",
+        itemCode: "501364",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2022-06-07/tronsmart-t7-mini-15w-bluetooth-speaker-ec260e-1654581513598._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹2173.42 ",
+        info: "Tronsmart T7 Mini 15W TWS Bluetooth Speaker, Balanced Bass, IPX7 Waterproof, LED Modes",
+        itemCode: "501439",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2022-06-11/A2-Indoor-Security-Camera-502645-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹1126.57",
+        info: "A2 Indoor Security Camera, Baby Monitor Smart Home IP Wi-Fi Camera with Night Vision/2.4GHZ/Motion Detection/2-Way Voice",
+        itemCode: "502645",
+      },
+
+      {
+        img: "https://img.gkbcdn.com/p/2022-06-01/360-Degree-Rotatable-1080p-HD-Camera-EU-Plug-501469-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹1529.20",
+        info: "360 Degree Rotatable 1080p HD Camera, WiFi Wireless Smart Night Vision Camera, 2-way Voice AP Connection - EU Plug",
+        itemCode: "501469",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2022-05-30/3-5-Inch-IPS-TYPE-C-Secondary-Screen-CPU-GPU-RAM-HDD-Monitoring-501430-0._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹2978.69",
+        info: "3.5 Inch IPS TYPE-C Secondary Screen CPU GPU RAM HDD Monitoring USB Display",
+        itemCode: "501430",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-mega-bluetooth-speaker-black-1571991584812._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹7085.55",
+        info: "SCULPFUN 30L/Min 200-240V Air Pump Compressor for Laser Engraver, Adjustable Speed Low Noise Low Vibration - EU Plug",
+        itemCode: "5014348",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2017-11-25/mx3-l-m-backlight-voice-input-2-4ghz-wireless-air-mouse-1571989128244._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹4025.53",
+        info: "Miyoo Mini 32GB Handheld Game Console, 3000 Games, 2.8Inch IPS Screen, One Click Archive, 4-5 Hours Battery Life, CPS FBA FC GB GBA GBC WSC SFC MD PS Simulators, Blue",
+        itemCode: "5015787",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹5313.96",
+        info: "Creality Smart Kit 2.0 Wifi Box, Cloud Slice, Cloud Printing, WiFi Box , 1080P Web Camera, Remote Control",
+        itemCode: "5015746",
+      },
+      {
+        img: "https://img.gkbcdn.com/p/2019-03-18/tronsmart-element-t6-plus-bluetooth-speaker-black-1574132869322._w280_p1_.jpg",
+        imglogo:
+          "https://img.gkbcdn.com/s3/l/label/Label1.png?version=20220609",
+        price: "₹1207.10",
+        info: "Mini Wireless Camera Real 1080P Wifi Camera Home Nanny Tiny Cam Baby with Night Vision Motion Cell Phone App Detection - Black",
+        itemCode: "5013645",
+      },
+    ];
+    let cartdata = JSON.parse(localStorage.getItem("cartitems")) || [];
+    console.log(cartdata);
+    let container = document.querySelector("#container");
+    display(productdata);
+    function display(productdata) {
+      productdata.forEach(function (ele) {
+        let box = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = ele.img;
+        let imglogo = document.createElement("img");
+        imglogo.src = ele.imglogo;
+        let info = document.createElement("p");
+        info.innerText = ele.info;
+        let price = document.createElement("h4");
+        price.innerText = ele.price;
+        let btn = document.createElement("button");
+        btn.innerText = "Add To Cart";
+        btn.addEventListener("click", function () {
+          if (addtocart(ele.itemCode) === true) {
+            alert("Product Added Successfully");
+            cartdata.push(ele);
+            localStorage.setItem("cartitems", JSON.stringify(cartdata));
+          } else {
+            alert("Product Already In The Cart");
+          }
+        });
+        box.append(img, imglogo, info, price, btn);
+        container.append(box);
+      });
+      function addtocart(id) {
+        for (let i = 0; i < cartdata.length; i++) {
+          if (cartdata[i].itemCode == id) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }
+  </script>
+</html>
