@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        #head{
+            display: flex;
+            width: 100%;
+            height: 10%;
+            justify-content:space-evenly;
+            background-color: rgb(40, 123, 249);
+            
+        }
+        .sm{
+            margin:10px 0px 10px 140px;
+        }
+        .tm{
+            margin:20px 150px 15px 0px;
+        } 
+        .det{
+            height: 45px;
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0px 20px 0px;
+        }
+        .des{
+
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #f1f1f1;
+            color: #999;
+            width: 1200px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            line-height: 45px;
+            height: 45px;
+            margin: auto;
+        }
+        .shop_title{
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+        .abc{
+           display: flex; 
+           justify-content: end;
+        }
+        .abc>img{
+            height:5%;
+            width:10%;
+        }
+        .abc>p{
+            font-size: 14px; 
+        }
+        .payment{
+            line-height: 140px;
+            border: 1px solid #e6e7e8;
+            border-radius: 4px;
+            height: 150px;
+            width: 1200px;
+            margin: auto;
+            margin-top: 80px;
+        }
+        .pay{
+            float: right;
+        }
+        .payment .contain{
+            font-size: 14px;
+            color: #333;
+            display: inline-block;
+            padding-left: 10px;
+            position: relative;
+            text-decoration: none;
+        }
+        .payment .pay .chooseitems {
+            color: #999;
+            font-size: 14px;
+            line-height: 44px;
+            display: inline-block;
+            padding-right: 34px;
+        }
+        .pricer {
+            display: inline-block;
+            text-align: right;
+            font-size: 16px;
+            color: #333;
+            padding-right: 10px;
+        }
+        .payment .pay .paybtn {
+            width: auto;
+            height: auto;
+            position: relative;
+        }
+        .payment .pay .paybtn img {
+            border-radius: 4px;
+        }
+        img {
+            border: 0;
+            vertical-align: middle;
+        }
+        .payment .pay .proceedbtn {
+            font-size: 20px;
+            color: #fff;
+            background-color: #06f;
+            vertical-align: middle;
+            position: relative;
+        }
+        .payment .pay button {
+            width: 240px;
+            height: 50px;
+            background-color: #fff;
+            border: 0;
+            outline: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #lbGrandtotal2017{
+            color: red;
+        }
+        .similar_product{
+            margin: auto;
+            width: 1200px;
+        }
+        .more {
+            position: relative;
+            height: 48px;
+            border-bottom: 1px #e5e5e5 solid;
+            color: #333;
+            font-weight: 400;
+            line-height: 48px;
+            font-size: 18px;
+            text-align: left;
+        }
+        .relevent {
+            margin: auto;
+            position: relative;
+            padding: 0 20px;
+            height: 240px;
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .prev{
+            display: inline-block;
+            margin-top: -20px;
+            width: 20px;
+            height: 20px;
+            color: #000000;
+            text-align: center;
+            cursor: pointer;
+            font-size: 40px;
+            margin-top: 68px;
+        }
+        .next{
+            margin-top: -20px;
+            width: 20px;
+            height: 20px;
+            color: #000000;
+            text-align: center;
+            cursor: pointer;
+            font-size: 40px;
+            margin-top: 68px;
+        }
+        .footer {
+            min-width: 1205px;
+            text-align: center;
+            padding-top: 30px;
+            background-color: #F1F6FD;
+            margin-top: 20px;
+        }
+        img {
+            border: 0;
+            vertical-align: middle;
+        }
+        .footer p {
+            font-size: 12px;
+            color: #888;
+            padding: 10px 0;
+        }
+        #details>#cartitemList{
+            width: 1200px;
+            margin: auto;
+            text-align: left;
+            font-size: smaller;
+        }
+        #cartitemList tbody .select{
+            display: inline-block;
+        }
+        
+        .point{
+            cursor:pointer;
+            vertical-align:middle;
+            border: 1px solid;
+        }
+        #cartitemlist{
+            margin: auto;
+            display: inline-block;
+        }
+        #items{
+            position: relative;
+            padding: 0 20px;
+            height: 240px;
+        }
+        #items a{
+            text-decoration: none;
+        }
+        .product{
+            margin: 10px 6px;
+            width: 180px;
+            float: left;
+            vertical-align: top;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+        }
+        .product img{
+            display: block;
+            margin: 0 auto;
+            max-width: 160px;
+            max-height: 160px;
+            border: 0;
+        }
+        img{
+            vertical-align: middle;
+        }
+        .product .pName{
+            overflow: hidden;
+            height: 28px;
+            text-align: left;
+            line-height: 14px;
+            font-size: 12px;
+            color: #666;
+        }
+        .price{
+            padding: 5px 0;
+            color: #f11b00;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 700;
+        }
+    </style>
+<body>
+   <div id="head">
+    <div class="sm">
+        <a href="https://www.geekbuying.com/"><img src="https://www.linkpicture.com/q/Screenshot-2022-06-16-113423.png" alt="">
+        </a>
+    </div>
+    <div class="tm">
+        <img src="https://i.ibb.co/Zf5pPrb/Screenshot-677.png">
+    </div>
+    <div class="gm">
+        <img src="https://i.ibb.co/MgGVpJ9/Screenshot-676.png">
+    </div>
+    </div> 
+   <div id="details">
+    <div class="det">
+        <div class="shop_title">
+            <p>Product Name & Detail</p>
+        </div>
+        <div>
+          <p style="text-align:right;margin-right: 19px;">Ship to</p>
+          <div class="abc">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAmVBMVEX/mTMSiAf/////lycAgQAAAIgAAIUAAH4AAIIAAIMAAHwAAHPi4u+kpMvz8/kAAHjn5/Lt7fXd3ey5uddPT6GZmcWDg7n6+v7Ly+HIyOJERJxlZao+PponJ5L29vy0tNbW1uggIJCfn8iGhrsYGJBNTaB2drQQEIx+fripqc5ra62QkMBXV6QiIpFfX6i+vtwyMpw6Opg1NZe0gadDAAAEvUlEQVR4nO3ba3OiSBiG4UzvdDcip8YDiAdQZAIxExP//4/btzHjZH1Nze6HpVPlc1Ul0eiH9g7Q2JKHBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA/+gvuPYg4BqacGjCoQmHJhyacF+hSTI5LFd7uV8tD5PE9WDEF2gSHNbaGyklpVRq5Omfh8D1kBw3qaZ6pCiGVFrr/oYc6SZ3OyinTZIpdZCeevnhNyY1jf/jRXm0vejG6S7kssnObhmeNxMbcTSiEuZIt2aeZ7eancNxOWzy7NFrn3cnI/p9pbTfcmFO3ZxaeVN3A3PWJNrS5lAEmb3d5wgvt7KgoMe2kauhuWoSPdK2QHvIwt5ZpPTtQF/p+S7tVbQNPbqK4qhJRluJ17VGZB3di2yPF/o62AxdJkzbUZRt5mZwjpo0lOTY3wrtFGMPHq/vP5N+JxJHiuLomOKmycyTXinOUewLX1IYSTmW7/cpiSjpOTMno3PSJNA049TnQ4gIae8J6cVrSkWbSNdvJvRITbOPdnJO66RJo1QzM3RjaY8YMhLVVmR+JraViGhzEZn9vZnZp7kYnosmCy31+UR180oH1a4QWWyiODJxJhqajaPTpn80oee5OM130WSlVL3pZ11hJO0daiLWITUJ12KiaM+Spn9ssamVKhyMz0GTVNsDrOi6/o5fiVKLdmVis2qFLkXl27OV/rhCh1mdDj9AB01qmoftnz+Z2ir5+Cjk08JP49RfPElxHNvdpZvao2vhyVE9/AAdNHmkOfZ8ihpK2l4m4y4fJ7ryKp2M8248oe1D7vrHDc3Z++EHOHwTmojlr9tRISciHB/beZ3v87puj+OdmMiV+fUE6WI6Hr5J6amnaFEuzptK6av8GAfrKmzDah3Ex/zR798Iik1e5tGT8srBRzh8k7lSLf1ID9NlWNF5yHLcBuugLd6KNl0H87E9N0m7p+Zgj66tUvPBRzh8k2cl/fNZRzLbxut2kczXaWFXIEdFsG6TfH6KH2fnPSb3pXoefITDN3lVanpZBTDhytd12o6kNWrTg/ZPu8vKYzRV6nXwEQ7fRErvkiSLIpNWeViovokqdnmVmii6LBJE3u8D8mCcNEmqYzhbnqT2/TiOvX37Js/e6q1Hv4l9LX8+H8IyT++mCbaTK1fHkzccTz7OO8Hveafp550mWM/vct6Zn085cH7ywe3z2JTOY9O7PY/F+50b9vS++PyiP3tfPLm398WiHv15/aTs109Wd7N+gnW2G4p/uR6b3c96rMiv1u2bT9btgztat+8/3zmY989xbn6+I+7t8x18DngLPi++YYrrChhcf3IDrlO6IdqOpCpSXM/2D/11j234yXWPwy+bXOD6WO5rXkc9vdvrqAWut78N/5dx08f/3zF/fvr/7is0+WrQhEMTDk04NOHQhHv4DtcevsE1NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMTDk04NOHQhEMT7m/cNifkUwM0UQAAAABJRU5ErkJggg==" alt="">
+          <p> / INR</p>
+          </div>
+        </div>
+        <!-- <div>
+            <form action="nation">
+            <p>Select Regional Settings</p>
+            <p>Ship to</p>
+            <select name="" id="">
+            <option value="Indina">Indina</option>
+            <option value="United States">United States</option>
+            </select>
+            <p>currency</p>
+            <select name="" id="">
+                <option value="text">INR ₹</option>
+                <option value="text">USD $</option>
+            </select>
+            <button>Save</button>
+            </form>
+        </div> -->
+    </div>
+    <div class="des">
+            <p>Product Name &amp; Detail</p>
+            <!-- <p>Unit Price</p>
+            <p>Quantity</p> -->
+            <p style="margin-left:100px;margin-right:-20px;">Price</p>
+            <p style="margin-left:70px ;">Operation</p>
+            
+    </div>
+    <div id="cartitemList">
+
+    </div>
+   <div class="payment">
+     <a class="contain" href="https://www.geekbuying.com/"><p>Continue Shoping ></p></a>
+     <div class="pay">
+     <span class="chooseitems">You choose <b>0</b> item(s)</span>
+     <div class="pricer">               
+        <p class="subtotalp">Total : <span id="lbGrandtotal2017">₹ 0.00</span></p>
+     </div>
+     <button class="paybtn" id="expressCheckoutBtn" onclick="addToCart();checkout(true);" style="">
+        <img src="https://content1.geekbuying.com/V1.4/en/images/cartImg/new_pp.png" alt="Check out with PayPal">
+    </button>
+    <button class="proceedbtn" onclick="addToCart();checkout()">
+        Proceed to checkout
+    </button>
+     </div>
+    </div> 
+   <div class="similar_product">
+    <h4 class="more">More Relevant Items to Consider</h4>
+    </div>
+   <div class="relevent">
+       <div class="prev"><</div>
+    <div id="items">
+        <div class="product">
+            <a href="">
+                <img width="160" height="160" src="https://img.gkbcdn.com/p/2019-03-26/front-hook-hanger-for-kugoo-s1-folding-electric-scooter---black-1571986394590._w280_.jpg" class="image" title="Front Hook Hanger for Folding Electric Scooter - Black">
+                <p class="pName">Front Hook Hanger for Folding Electric Scooter - Black</p>
+            </a>
+            <div class="price">
+                <span class="price">₹723.94</span>
+            </div>
+        </div>
+    </div>
+    <div id="items">
+        <div class="product">
+            <a href="">
+                <img width="160" height="160" src="https://img.gkbcdn.com/p/2019-09-07/outdoor-sports-cycling-half-finger-gloves-size-l-black-and-gray-1571992454717._w280_.jpg" class="image" title="Outdoor Sports Cycling Half Finger Gloves Absorbing Sweat Design Size L - Black And Gray">
+                <p class="pName">Outdoor Sports Cycling Half Finger Gloves Absorbing Sweat Design Size L - Black And Gray</p>
+            </a>
+            <div class="price">
+                <span class="price">₹804.46</span>
+            </div>
+        </div>
+    </div>
+    <div id="items">
+        <div class="product">
+            <a href="">
+                <img width="160" height="160" src="https://img.gkbcdn.com/p/2019-08-28/knee-and-elbow-pads-outdoor-hiking-mountain-safety-gear-black-1574132421512._w280_.jpg" class="image" title="Bike &amp; Scooter Knee And Elbow Pads Outdoor Hiking Mountain Safety Gear - Black">
+                <p class="pName">Bike &amp; Scooter Knee And Elbow Pads Outdoor Hiking Mountain Safety Gear - Black</p>
+            </a>
+            <div class="price">
+                <span class="price">₹1609.73</span>
+            </div>
+        </div>
+    </div>
+    <div id="items">
+        <div class="product">
+            <a href="">
+                <img width="160" height="160" src="https://img.gkbcdn.com/p/2019-09-07/outdoor-sports-magic-scarf-bicycle-riding-headband-blue-fire-1571992468576._w280_.jpg" class="image" title="Outdoor Sports Magic Scarf Bicycle Riding Headband Soft Breathable Stain Resistant Design -  Random Color">
+                <p class="pName">Outdoor Sports Magic Scarf Bicycle Riding Headband Soft Breathable Stain Resistant Design -  Random Color</p>
+            </a>
+            <div class="price">
+                <span class="price">₹804.46</span>
+            </div>
+        </div>
+    </div>
+    <div id="items">
+        <div class="product">
+            <a href="">
+                <img width="160" height="160" src="https://img.gkbcdn.com/p/2021-10-27/kugoo-s1-plus-electric-scooter-350w-motor-7-5ah-black-1635320207903._w280_.jpg" class="image" title="KUGOO S1 Plus 8 inch Folding Electric Scooter 350W Motor 7.5Ah Clear LCD Display Screen Max 30km/h 3 Speed Modes Max Range up to 25km Easy Folding - Black">                
+                <p class="pName">KUGOO S1 Plus 8 inch Folding Electric Scooter 350W Motor 7.5Ah Clear LCD Display Screen Max 30km/h 3 Speed Modes Max Range up to 25km Easy Folding - Black</p>
+            </a>
+            <div class="price">
+                <span class="price">₹26250.93</span>
+            </div>
+        </div>
+    </div>
+        <div class="next">></div>
+    </div>
+    <div class="footer">
+        <img src="https://content1.geekbuying.com/V1.4/en/images/shopcart_footicon.png" alt="">
+        <p>© 2012-2022 Geekbuying.com. All rights reserved.</p>
+    </div>
+</body>
+<script>
+    let productCont=document.getElementById("cartitemList");
+    productCont.style.width="1200px";
+    let cart=JSON.parse(localStorage.getItem("cartitems")) || [];
+    productCont.style.margin="auto";
+    
+    function displayProducts(data=[]){
+        productCont.innerHTML="";
+        plus=0;
+        data.forEach(function(element){
+            
+            let product=document.createElement("div");
+            product.style.verticalAlign="centre"
+            product.style.display="grid";
+            product.style.gridTemplateColumns="35% 45% 10% 5% 5%"
+            product.style.width="100%";
+            product.style.border="1px solid gray";
+            product.style.marginTop="20px";
+
+            let img=document.createElement("img");
+            img.src=element.img;
+            img.style.width="30%";
+            let info=document.createElement("p");
+            info.innerText=element.info;
+            info.style.marginTop="auto";
+            info.style.marginBottom="auto";
+            info.style.marginLeft="-250px";
+            info.style.marginRight="350px";
+
+            let price=document.createElement("h4");
+            price.innerText='₹'+element.price;
+            price.style.marginTop="auto";
+            price.style.marginBottom="auto";
+            price.style.marginLeft="-300px"
+
+            let btn=document.createElement("button");
+            btn.innerText="Delete";
+            btn.style.padding="10px";
+            btn.style.border="transparent";
+            btn.style.backgroundColor="transparent";
+            btn.style.textDecoration="underline";
+            btn.style.cursor="pointer";
+            btn.style.marginLeft="-300px";
+            
+            // btn.style.border="1px solid red"
+            btn.addEventListener("click",function(){
+                // console.log(element.itemCode);
+                Delete(element.itemCode);
+                
+               
+            })
+            let plus=document.createElement("button");
+            plus.innerText="+";
+            plus.style.marginLeft="15px";
+            plus.style.padding="10px";
+            plus.style.border="transparent";
+            plus.style.backgroundColor="transparent";
+            plus.style.fontSize="30px";
+            // plus.style.textDecoration="underline";
+            // plus.style.cursor="pointer";
+            // plus.style.marginLeft="-300px";
+            // plus.style.fontSize="30px";
+
+            plus.addEventListener("click",function(){
+               let totalPrice=Number(element.price)+Number(element.price);
+                console.log(totalPrice);
+                price.innerHTML="";
+                price.innerText='₹'+ totalPrice;
+                // document.getElementById("price").innerText=totalPrice;
+            })
+
+            // totalPrice+= +element.price;
+            product.append(img,info,price,btn,plus);
+            productCont.append(product);
+            
+        })
+           
+            // document.getElementById("totalPrice").innerText="Total Price="+totalPrice;
+            // document.getElementById("totalCount").innerText="Total Count="+data.length;
+    }
+
+    // function applyPromo(){
+    //     let promo=document.getElementById("applyPromo").value;
+    //     if(promo=="masai30")
+    //     {
+    //         totalPrice=Math.floor(totalPrice*0.3);
+    //         document.getElementById("totalPrice").innerText="Total Price="+totalPrice;
+    //     }
+    //     else
+    //     {
+    //         alert("Invalid promo code");
+    //     }
+    // }
+
+    displayProducts(cart);
+
+
+    function Delete(id){
+        let pdelet=JSON.parse(localStorage.getItem("cartitems")) || [];
+        let deleted=pdelet.filter(function(el){
+            return el.itemCode != id;
+        })
+       localStorage.setItem("cartitems",JSON.stringify(deleted));
+       console.log(deleted)
+       displayProducts(deleted); 
+    }
+</script>
+</html>
