@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+  </head>
+  <style>
+    form {
+      padding: 0px 30px;
+      margin: auto;
+
+      border: 0px solid;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      background-color: white;
+      border-radius: 3px;
+    }
+    body > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0px solid;
+      height: 650px;
+      /* background-image: url(//img.gkbcdn.com/s3/bn/2203/signin-6239450f2b40c91b9c8a4526.jpg); */
+    }
+    #btn1 {
+      background-color: rgb(0, 102, 255);
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 0px;
+      color: white;
+    }
+    #btn2 {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid gray;
+      padding: 10px 0px;
+      margin-bottom: 10px;
+    }
+    #btn2 > a {
+      text-decoration: none;
+      color: gray;
+    }
+    hr {
+      width: 30%;
+      height: 0%;
+    }
+    form > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    form > div > p {
+      margin: 0px 5px;
+    }
+    form > img {
+      display: block;
+      margin: auto;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    form > input {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid gray;
+    }
+    #box {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      align-items: center;
+      color: rgb(106, 105, 105);
+    }
+    #box > div {
+      font-size: 15px;
+    }
+    #box > div > i {
+      border: 1px solid rgb(71, 69, 69);
+      border-radius: 30%;
+      padding: 2px;
+      font-weight: bold;
+    }
+    div + p {
+      text-decoration: underline;
+      color: blue;
+      margin-left: 5px;
+    }
+    #checked {
+      text-align: center;
+      font-size: 15px;
+      color: red;
+      font-weight: bold;
+      font-family:'Courier New', Courier, monospace;
+    }
+    @media all and (min-width:320px) and (max-width:479px) {
+    body > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: none;
+      width: auto;
+      height: 500px;
+    }
+  }
+  </style>
+  <body>
+    <div>
+      <form action="">
+        <h4>Sign In</h4>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email address"
+        /><br /><br />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+        />
+        <p id="checked"></p>
+        <div id="box">
+          <div>
+            <input id="checkbox" type="checkbox" />
+            <label for="">keep me Signed in</label>
+            <i> ? </i>
+          </div>
+
+          <p>Forgot Your Password</p>
+        </div>
+        <br />
+        <button id="btn1">Sign In</button><br /><br />
+        <button id="btn2">
+          <a href="signin.html">Create a new account</a>
+        </button>
+        <div>
+          <hr />
+          <p>Or Join With</p>
+          <hr />
+        </div>
+        <img
+          src="https://content1.geekbuying.com/V1.4/en/images/footImg/google_mod.png?v=20197"
+          alt=""
+        />
+      </form>
+    </div>
+  </body>
+  <script>
+    let userInfols = JSON.parse(localStorage.getItem("userData")) || [];
+    let form = document.querySelector("form");
+    form.addEventListener("submit", signin);
+    function signin() {
+      event.preventDefault();
+      let data = {
+        email: document.querySelector("#email").value,
+        password: document.querySelector("#password").value,
+      };
+      if (checkSignin(data.email, data.password) === true) {
+        window.location.href = "index.html";
+        console.log("Sign IN Successful");
+      } else {
+        if(data.email==="" && data.password===""){
+          document.querySelector("#checked").innerText =
+          "Fill Your Details To Sign In";
+        }else{
+          document.querySelector("#checked").innerText =
+          "You Have Enterd Wrong Email Or Password."
+        }
+        
+      }
+    }
+
+    function checkSignin(email, password) {
+      let filter = userInfols.filter(function (ele) {
+        return ele.email === email && ele.password === password;
+      });
+      if (filter.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  </script>
+</html>
