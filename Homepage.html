@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    margin:0;
+    padding:0;
+}
+#head-up{
+    width: 100%;
+    height: 70px;
+    padding: 10px 100px;
+    background-color: #1875d1;
+  
+    text-align: right;
+    font-size: 25px;
+}
+#head-up>ul>li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+   
+}
+#head-up>ul>li>a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#head-down{
+    background-color: #1875d1;
+    width: 100%;
+    height: 120px;
+    padding: 40px 100px;
+    
+}
+#con{
+    display: flex;
+}
+#con>div>img{
+    width: 250px;
+    height: 55px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+.seach-bar{
+    background-color: white;
+    width: 90%;
+    max-width: 700px;
+    height: 55px;
+    display: flex;
+    padding: 5px;   
+    border-radius: 4px;
+    
+}
+#select{
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:black;
+    width: 270px;
+    font-size: 20px;
+    padding: 20px 30px;
+   
+    cursor: pointer;
+    position: relative;
+}
+#select>ul{
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+    grid-template-rows: repeat(6,45px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 24px;
+}
+#select>ul>li{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.seach-bar>input{
+    padding: 10px 25px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+#select>ul.open{
+    max-height: 300px;
+}
+#logo{
+    display: flex;
+    margin-left: 400px;
+    padding: 10px;
+    gap: 100px;
+    cursor: pointer;
+    size: 50px;
+    font-size: 23px;
+}
+#logo>div>a{
+    color: white;
+    text-decoration: none;
+}
+#logo>div>a>img{
+    width: 20px;
+    height: 12px;
+}
+#logo>div>div>div{
+    color: white;
+}
+#head>hr{
+    border: 2px solid white ;
+}
+#lang{
+    float: right;
+    padding: 0;
+    margin: 0;
+    padding-top: 25px;
+
+}
+#lang>li{
+    background-color: white;
+    padding : 5px;
+    padding-left: 0px;
+   
+    position: relative;
+    list-style: none;
+}
+#lang>li>a{
+    display: block;
+    padding: 0px 15px;
+    color: gray;
+    text-decoration: none;
+    line-height: 20px;
+}
+#lang>li>a:hover{
+    background: #e8eaf6;
+    display: none;
+}
+#lang>li:hover{
+    position: absolute;
+   
+    display: none;
+}
+   /* Dropdown Button */
+        
+   .dropbtn {
+            background-color: rgb(16, 115, 253);
+            color: white;
+            padding: 7px;
+            font-size: 20px;
+            border: none;
+        }
+        /* The container <div> - needed to position the dropdown content */
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 330px;
+            gap: 20px;
+        }
+        /* Dropdown Content (Hidden by Default) */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 260px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        /* Links inside the dropdown */
+        
+        .dropdown-content a {
+            color: black;
+            font-size: 20px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+        /* Change color of dropdown links on hover */
+        
+        .dropdown-content a:hover {
+            background-color: rgb(234, 239, 242);
+        }
+        /* Show the dropdown menu on hover */
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        
+        .dropdown:hover .dropbtn {
+            background-color:  #1875d1;
+            color: white;
+        }
+        
+        nav {
+            background-color:  #1875d1;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        span {
+            margin-left: 20px;
+            font-size: 23px;
+            
+        }
+        span>a{
+            color: white;
+            text-decoration: none;
+        }
+
+*{
+     display: wrap;
+ }
+ #up{
+     font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    background-color: #e3f2fd;
+}
+#main{
+    width: 90%;
+    height: 500px;
+    padding: 50px;
+    margin:auto;
+}
+#box{
+    display: grid;
+    grid-template-columns: repeat(2,570px);
+    grid-template-rows: repeat(3,180px);
+    gap: 100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-top: 20px;
+    padding:20px;
+    height: 600px;
+    width: 1700px;
+    grid-template-areas: 
+    "a b"
+    "a c";
+}
+#box>div:nth-child(1){
+    cursor: pointer;
+    grid-area: a;
+}
+#box>div:nth-child(2){
+    cursor: pointer;
+    grid-area: b;
+}
+#box>div:nth-child(3){
+    cursor: pointer;
+    grid-area: c;
+}
+#box>div>img{
+    cursor: pointer;
+    height:560px;
+}
+#box>div{
+    cursor: pointer;
+    display: flex;
+}
+#Trend{
+  
+    padding-top: 20px;
+}
+#Trend>p{
+    font-size: 25px;
+}
+#Trend-f{
+    display: flex;
+    gap: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#Trend-f>div{
+    padding: 40px;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+#Trend-f>div>img{
+    width: 500px;
+}
+#Trend-f>div>p{
+    font-style: normal;
+    font-size: 23px;
+    color: gray;
+}
+#new{
+    padding-top: 0px;
+    padding:10px ;
+    background-color: antiquewhite;
+    height: 100px;
+}
+#new>h2{
+    font-size: 28px;
+    margin-bottom:20px ;
+}
+#new1{
+    background-color: antiquewhite;
+    display: flex;
+    width: 80%;
+    height: 100px;
+    padding: 20px;
+    margin-left:44px;
+    gap: 45px;
+    cursor: pointer;
+}
+#new1>div>img{
+    gap: 20px;
+    width: 400px;
+    height: 400px;
+}
+#new1>div>p:first-child{
+    color: gray;
+    font-size: 30px;
+}
+#new1>div>p:last-child{
+    font-weight: bold;
+    font-size: 20px;
+}
+#best-seller{
+    margin: 0;
+    padding: 10px;
+    padding-top:520px ;
+}
+#best-seller1{
+    
+    display: flex;
+    padding-top: 20px;
+    gap: 20px;
+}
+#best-seller1>div{
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+}
+#best-seller1>div>div{
+    width: 80px;
+    height: 10px;
+    text-align: center;
+    padding: 9px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: white;
+    background-color:red;
+}
+#best-seller1>div>p:nth-child(3){
+    color: gray;
+    font-size: 20px;
+}
+#best-seller1>div>p:nth-child(5){
+    font-weight: bold;
+    font-size: 25px;
+}
+#best-seller1>div>p>img{
+    width: 140px;
+    height: 50px;
+}
+#best-seller>h2{
+    font-size: 28px;
+}
+#best-seller>h2>a{
+    text-decoration: none;
+}
+#popular-brand>h2{
+    padding: 20px;
+    font-size: 28px;
+}
+#popular-brand>div{
+    padding: 10px;
+    padding-right: 180px;
+    margin: auto;
+    justify-content: center;
+    height: 200px;
+    width: 2000px;
+    cursor: pointer;
+}
+#popular-brand1{
+    display: flex;
+    padding: 10px;
+    gap: 30px;
+    margin-top: 100px;
+    padding-top: 10px;
+   
+}
+#popular-brand1>div{
+
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+#popular-brand1>div>div{
+    padding-top: 10px;
+    width: 90px;
+    height: 15px;
+    padding: 15px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    
+}
+#popular-brand1>div>p:nth-child(3){
+    color: gray;
+    font-size: 18px;
+}
+#popular-brand1>div>p:nth-child(4){
+    font-weight: bold;
+    font-size: 15px;
+}
+#Recommended>h2{
+    font-size: 25px;
+    padding: 30px;
+}
+#Recommended>div{
+    
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+footer{
+            padding-top:4800px ;
+            height: 400px;
+        }
+        #footer-head{
+            padding-top: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+            background-color: #e8f5e9;
+        }
+        #footer-head>p>a{
+            text-decoration: none;
+            color: #1875d1;
+        }
+        #footer-mid{
+                text-align: center;
+                margin: center;
+                padding: 20px;
+                background-color: #e8f5e9;
+        }
+        #footer-mid>input{
+            width: 600px;
+            height: 60px;
+            border-radius: 6px;
+            gap: 10px;
+            font-size: 25px;
+            padding: 20px;
+            border: 1px solid #1875d1 ;
+        }
+        button{
+            width: 110px;
+            height: 60px;
+            border-radius: 6px;
+            font-size: 20px;
+            color: white;
+            background-color: #1875d1;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #footer-mid1{
+            display: flex;
+            justify-content: center;
+            gap: 300px;
+            padding: 10px;
+            background-color: #e8f5e9;
+        }
+        #footer-mid1> .footer>p>a{
+            color: gray;
+            text-decoration: none;
+            font-size: 25px;
+            padding-top:20px;
+            margin-top: 20px;
+        }
+        #footer-mid1> .footer .footer-img{
+            display: grid;
+            grid-template-columns: repeat(2,130px);
+            width: 100px;
+            cursor: pointer;
+        }
+    #footer-popular{
+    
+     
+        background-color: #e8f5e9;
+        padding: 30px;
+        font-size: 20px;
+        padding-left: 180px;
+    }
+    .footer-pop{
+        
+        padding: 20px;
+        display: flex;
+        gap:15px;
+        font-size: 20px;
+        margin-right: 20px;
+        padding-left: 80px;
+    }
+    .footer-pop>div{
+       
+        padding: 10px;
+        border-radius: 8px;
+        color: gray;
+        background-color: white;
+    }
+    #footer-logo {
+            min-width: 1205px;
+            text-align: center;
+            padding-top: 30px;
+            background-color: #e8f5e9;
+            
+    }
+    #footer-logo>img {
+            border: 0;
+            vertical-align: middle;
+            padding-bottom: 20px;
+            background-color: #e8f5e9;
+    }
+    #footer-logo>p{
+        background-color: #e8f5e9;
+            font-size: 20px;
+            color: #888;
+            padding: 20px 0;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <header>
+        <div id="head">
+            <div id="head-up">
+                <ul>
+                    <li><a href="#"><i class="fa fa-mobile "></i>  Save BIG with our app!</a></li>
+                    <li><a href="#">Language</a>
+                         <!-- <ul id="list">
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">Italiano</a></li>
+                            <li><a href="#">Deutech</a></li>
+                            <li><a href="#">Espanol</a></li>
+                            <li><a href="#">Francais</a></li>
+                            <li><a href="#">Portugues</a></li>
+                            <li><a href="#">Slovencina</a></li>
+                            <li><a href="#">Magyar</a></li>
+                            <li><a href="#">Slovenscina</a></li>
+                            <li><a href="#">lietuviu Kalba</a></li>
+                            <li><a href="#">Svenska</a></li>
+                            <li><a href="#">Dansk</a></li>
+                            <li><a href="#">Japanese</a></li>
+
+                        </ul> -->
+                    </li>
+                    <li><a href="#">Support Center</a></li>
+                </ul>
+            </div>
+            
+            <hr>
+
+            <div id="head-down">
+                <div id="con">
+                    <div class="logo"><img src="https://content1.geekbuying.com/V1.4/en/images/indexV7/Geekbuying.png"></div>
+                    <div class="seach-bar">
+                        <div id="select">
+                             <p>All Categories</i>   |</p>
+                             <ul id="list">
+                                 <li class="options">All Categories</li>
+                                 <li class="options">Smart Home & Garden </li>
+                                 <li class="options">Phone Assessories</li>
+                                 <li class="options">Computer Tablets & Assessories</li>
+                                 <li class="options">Wearable Device</li>
+                                 <li class="options">Automobiles & Motorcycles</li>
+                                 <li class="options">Sport & Outdoors</li>
+                                 <li class="options">consumer Electronics</li>
+                                 <li class="options">TV Boxes & Mini PC's</li>
+                                 <li class="options">Toys & Hobbies</li>
+                                 <li class="options">Security System</li>
+                                 <li class="options">Fashion</li>
+     
+                             </ul>
+                         </div>
+                         <input type="search" placeholder="Search a Keywords">
+                     </div>
+                     <div id="logo">
+                        <div><a href="#">Ship to<br><img src="data:image/png;base64,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" alt="Error">/INR</a></div>
+                        <div><a href="#"><i class="fa fa-user "></i> sign in</a></div>
+                        <div><a href="#"><i class="fa fa-cart-shopping"></i></a></div>
+                     </div>
+                 </div>
+                </div>                
+             </div>
+    </header>
+
+    <nav>
+
+        <div class="dropdown">
+
+            <button class="dropbtn">  &#9776; Categories</button>
+
+            <div class="dropdown-content">
+                <a href="#" id="loc-ware">Local Warehouses</a>
+                <a href="#">Sports & Outdoors</a>
+                <a href="#">Smart Home & Garden</a>
+                <a href="#">Consumer Electronics</a>
+                <a href="#">TV Boxes & mini PCs</a>
+                <a href="#">Computers,Tablets &Accessorises</a>
+                <a href="#">Toys & Hobbies</a>
+                <a href="#">Phines & Accessorises</a>
+                <a href="#">Automobiles & Motorcycles</a>
+                <a href="#">Wearables Devices</a>
+                <a href="#">Security Systems</a>
+                <a href="#">Fashion</a>
+            </div>
+        </div>
+        <span><a href="">New</a> </span>
+        <span><a href=""> Bestselling </a></span>
+        <span><a href=""> Brand </a></span>
+        <span><a href="">Clearance</a> </span>
+        <span><a href="">Deals</a> </span>
+        <span><a href="">Coupon</a></span>
+        <span><a href=""> App Only</a></span>
+    </nav>
+
+
+    <div id="main">
+        <div id="up">
+            <p>10th Anniversary party on.Check our shopping guide & You Tube giveaway.<a href="#"> Check Now </a></p>
+        </div>
+        <div id="box">
+            <div><img src="https://img.gkbcdn.com/bn/2206/740x670-62a832772b40c920d48b90e3._p1_.jpg"></div>
+            <div>
+                    <div><img src="https://img.gkbcdn.com/p/2022-03-05/343ff9fe8cea46f48ba1025ffadf4a58-497360-0._w280_p1_.jpg"></div>
+                    <div><img src="https://img.gkbcdn.com/p/2020-03-18/Tronsmart-Onyx-Ace-Bluetooth-5-0-TWS-Earphones-White-899355-._w280_p1_.jpg"></div>
+                    <div><img src="https://img.gkbcdn.com/p/2019-11-15/mifo-o7-bluetooth-5-0-tws-qualcomm-qcc3020-earphones-black-1574132882676._w280_p1_.jpg"></div>
+                    <div><img src="https://img.gkbcdn.com/p/2021-11-29/razer-deathadder-essential-optical-gaming-mouse-black-aa9d23-1638169302886._w280_p1_.jpg"></div> 
+            </div>
+            <div>
+                <div><img src="https://img.gkbcdn.com/p/2019-05-11/h96-max-rk3318-android-9-0-4gb-64gb-4k-tv-box-1574132538025._w280_p1_.jpg"></div>
+                <div><img src="https://img.gkbcdn.com/p/2021-12-09/3-7V-108-Lamp-Beads-Solar-Wall-Lamp-480326-0._w280_p1_.jpg"></div>
+                <div><img src="https://img.gkbcdn.com/p/2021-11-29/razer-deathadder-essential-optical-gaming-mouse-black-aa9d23-1638169302886._w280_p1_.jpg"></div>
+                <div><img src="https://img.gkbcdn.com/p/2019-10-11/jjrc-x12-4k-gps-rc-drone-white-two-batteries-with-bag-1574132236117._w280_p1_.jpg"></div>
+            </div>
+        </div>
+
+        <div  id="Trend">
+                <h1>Trending Catagories</h1>
+            <div id="Trend-f">
+                <div>
+                    <img src="https://img.gkbcdn.com/bn/2205/488x2743-628f62882b40c91f8cd36998._p1_.jpg" alt="Error" />
+                    <h3>Smart Home</h3>
+                   <p>Smart cleaning robots and vacuums.keep floors constantly tidy with very little effort on your part</p>
+                </div>
+                <div>
+                    <img src="https://img.gkbcdn.com/bn/2205/488x274-628f63522b40c91f8cd3699a._p1_.jpg" alt="Error" />
+                    <h3>E-transport</h3>
+                   <p>My ride my speed my way i'm keeping up with myself</p>
+                </div>
+                <div>
+                    <img src="https://img.gkbcdn.com/bn/2205/3d488x274-62958bbe2b40c9241c538d77._p1_.jpg" alt="Error" />
+                    <h3>3D Printers</h3>
+                   <p>3D printers allow you to bring digitally modeled designs to life by using highly detailed filament priting</p>
+                </div>
+            </div>
+        </div>
+        <div id="new">
+                <h2>New For You. <a href="#"> SEE MORE </a></h2>
+                <div id="new1">
+                    <div>
+                        <img src="https://img.gkbcdn.com/bn/2206/276x348-62a6e6f12b40c917a8566ce6._p1_.jpg" /></div>
+                    <div><img src="https://img.gkbcdn.com/p/2022-06-08/GREEN-TIME-T2-Alarm-Clock-Radio-White-501646-0._w280_p1_.jpg" />
+                        <p>GREEN TIME T2 Dual USB Charrging Alarm Clock Wireless</p>
+                        <p><i class="fa-light fa-square"></i>2415.00</p>
+                    </div>
+                    <div><img src="https://img.gkbcdn.com/p/2022-06-07/C127-RC-Helicopter-2-4G-4CH-6-Axis-Gyro-720P-Camera-with-Remote-Contro-501582-0._w280_p1_.jpg" />
+                        <p>C127 RC Helicopter 2.4G 4CH 6-Axis Gyro 720P Camera Optical</p>
+                        <p><i class="fa-light fa-square"></i>9662.41</p>
+                    </div>
+                    <div><img src="https://img.gkbcdn.com/p/2022-06-06/8BitDo-USB-Wireless-Adapter-2-501568-0._w280_p1_.jpg">
+                        <p>8Bitdo USB Wireless Adapter Bluetooth 4.0 Compatible with</p>
+                        <p><i class="fa-light fa-square"></i>1368.15</p>
+                    </div>
+                </div>
+
+        </div>
+        <div id="best-seller">
+            <h2>Best Sellers .<a href="#"> See More</a></h2>
+            <div id="best-seller1">
+               <div><img src="https://img.gkbcdn.com/p/2022-02-10/a6r-tws-wireless-earphones-black-4570b2-1644488631155._w280_p1_.jpg">
+                <div>25% OFF</div>
+                    <p>Tronsmart Element T6 Plus Portable Bluetooth 5.0 Speaker with 40W Max</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO8BtFhMcVhnj2dX4p6AtlqoY-rJ6Jw3IBpw&usqp=CAU"></p>
+                    <p><i class="fa-light fa-square"></i>59.99</p>
+                    <p><strike> <i class="fa-light fa-square"></i>79.99</strike></p>
+                </div>
+
+                <div><img src="https://img.gkbcdn.com/p/2019-03-18/tronsmart-element-t6-plus-bluetooth-speaker-black-1574132869322._w280_p1_.jpg">
+                <div>25% OFF</div>
+                    
+                    <p>Tronsmart Element T6 Plus Portable Bluetooth 5.0 Speaker with 40W Max</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO8BtFhMcVhnj2dX4p6AtlqoY-rJ6Jw3IBpw&usqp=CAU"></p>
+                    <p><i class="fa-light fa-square"></i>59.99</p>
+                    <p><strike> <i class="fa-light fa-square"></i>79.99</strike></p>
+                </div>
+
+                <div><img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-mega-bluetooth-speaker-black-1571991584812._w280_p1_.jpg">
+                    <div>25% OFF</div>
+
+                    <p>Tronsmart Element T6 Plus Portable Bluetooth 5.0 Speaker with 40W Max</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO8BtFhMcVhnj2dX4p6AtlqoY-rJ6Jw3IBpw&usqp=CAU"></p>
+                    <p><i class="fa-light fa-square"></i>59.99</p>
+                    <p><strike> <i class="fa-light fa-square"></i>79.99</strike></p>
+                </div>
+
+                <div><img src="https://img.gkbcdn.com/p/2020-03-18/Tronsmart-Onyx-Ace-Bluetooth-5-0-TWS-Earphones-White-899355-._w280_p1_.jpg">
+                    <div>25% OFF</div>
+                    <p>Tronsmart Element T6 Plus Portable Bluetooth 5.0 Speaker with 40W Max</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO8BtFhMcVhnj2dX4p6AtlqoY-rJ6Jw3IBpw&usqp=CAU"></p>
+                    <p><i class="fa-light fa-square"></i>59.99</p>
+                    <p><strike> <i class="fa-light fa-square"></i>79.99</strike></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="popular-brand">
+            <h2>Popular brands</h2>
+            <div>
+                <img src="https://img.gkbcdn.com/bn/2205/1500x2603-628f67f02b40c91f8ca376fa._p1_.jpg" />
+            </div>
+        </div>
+
+        <div id="popular-brand1">
+            <div><img src="https://img.gkbcdn.com/bb/eleglide-20220531151324673._p1_.jpg"></div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2022-04-24/eleglide-m1-plus-upgraded-version-electric-bike-12-5ah-250w-black-258649-1650765309927._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 PLUS Electric Mountain Bike Upgraded</p>
+                <p><i class="fa-light fa-square"></i>65103.15</p>
+                <p><strike><i class="fa-light fa-square"></i>85362.15</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2022-04-24/eleglide-m1-upgraded-version-electric-bike-7-5ah-250w-motor-dark-blue-b23cd2-1650765670228._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-10-28/36v-10-4ah-removable-battery-for-eleglide-f1-electric-bike-1635406527480._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-10-28/36v-12-5ah-removable-battery-for-eleglide-m1-plus---m1-electric-bike-1635405942861._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+        </div>
+
+        <div id="popular-brand1">
+            <div><img src="https://img.gkbcdn.com/bb/jimmy-20200910094916929._p1_.jpg"></div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2020-04-09/JIMMY-JV35-Anti-mite-Vacuum-Cleaner-Gray-899874-._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 PLUS Electric Mountain Bike Upgraded</p>
+                <p><i class="fa-light fa-square"></i>65103.15</p>
+                <p><strike><i class="fa-light fa-square"></i>85362.15</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-07-16/JIMMY-HW8-Cordless-Wireless-Wet-Dry-Smart-Vacuum-Cleaner-461369-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2020-01-07/JIMMY-F6-1800W-Electric-Hair-Dryer-Ruby-Red-882508-._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-03-02/JIMMY-H9-Pro-Cordless-Handheld-Vacuum-Cleaner-455418-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+        </div>
+
+        <div id="popular-brand1">
+            <div><img src="https://img.gkbcdn.com/bb/sculpfun-20220617114417913._p1_.jpg"></div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-12-22/SCULPFUN-S9-Laser-Engraver-481991-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 PLUS Electric Mountain Bike Upgraded</p>
+                <p><i class="fa-light fa-square"></i>65103.15</p>
+                <p><strike><i class="fa-light fa-square"></i>85362.15</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-12-17/Sculpfun-Honeycomb-Panel-200x300mm-481734-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2022-05-12/Sculpfun-S10-Laser-Engraver-500429-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2022-05-30/SCULPFUN-30L-Min-Air-Pump-Compressor-EU-Plug-501434-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+        </div>
+
+        <div id="popular-brand1">
+            <div><img src="https://img.gkbcdn.com/bb/tronsmart-20210123120544453._p1_.jpg"></div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2020-01-09/Tronsmart-element-T6-plus-Upgrade-Black-895558-._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 PLUS Electric Mountain Bike Upgraded</p>
+                <p><i class="fa-light fa-square"></i>65103.15</p>
+                <p><strike><i class="fa-light fa-square"></i>85362.15</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2020-12-09/Tronsmart-Apollo-Q10-ANC-Bluetooth-Headphones-Black-426941-0._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2021-10-12/tronsmart-splash-1-led-15w-bluetooth-speaker-1634038411944._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2022-01-17/tronsmart-onyx-prime-qcc3040-tws-bluetooth-5-2-headset-b1ab07-1642405103277._w280_p1_.jpg"/>
+                <div>38% OFF</div>
+                <p>>ELEGLIDE M1 Electric Bike Upgraded Version 27.5 inch </p>
+                <p><i class="fa-light fa-square"></i>54257.13</p>
+                <p><strike><i class="fa-light fa-square"></i>88687.57</strike></p>
+            </div>
+        </div>
+
+        <div id="Recommended">
+            <h2>Recommended For You</h2>
+            <div>
+                <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1574132217684._w280_.jpg" />
+                <img src="https://img.gkbcdn.com/p/2021-01-11/Xiaomi-JIMMY-H8-Pro-Cordless-Handheld-Vacuum-Cleaner-Purple-427169-0._w280_.jpg" />
+                <img src="https://img.gkbcdn.com/p/2021-04-07/JIMMY-JV83-JV85-JV85-PRO-H9-PRO-Vacuum-cleaner-Water-Tank-Accessories-458298-0._w280_.jpg" />
+                <img src="https://img.gkbcdn.com/p/2021-06-15/original-battery-pack-for-jimmy-h9-pro-cordless-vacuum-cleaner-1623752581955._w280_.jpg" />
+                <img src="https://img.gkbcdn.com/p/2022-05-03/eleglide-m1-upgraded-version-electric-bike-7-5ah-250w-motor-dark-blue-fb08ff-1651559219804._w280_.jpg" />
+                <img src="https://img.gkbcdn.com/p/2020-11-28/xiaomi-jimmy-jv85-pro-cordless-handheld-vacuum-cleaner---purple-1606560899187._w280_.jpg"/>
+            </div>
+        </div>
+
+    </div>
+    
+   
+    <footer>
+        <div id="footer">
+            <div id="footer-head">
+                <p><a href="#">Why buy from greekbuying? </a>+</p>
+            </div>
+            <hr>
+            <div id="footer-mid">
+                <input type="search" placeholder="Enter email to get a 5% off coupon">
+                <button>Subscribe</button>
+            </div>
+            <hr>
+            <div  id="footer-mid1">
+                <div class="footer">
+                    <h3>Help</h3>
+                    <p><a href="#">Order status</a></p>
+                    <p><a href="#">About us</a></p>
+                    <p><a href="#">Contact us</a></p>
+                    <p><a href="#">Warranty</a></p>
+                    <p><a href="#">FAQs</a></p>
+                    <p><a href="#">Sitemap</a></p>
+                </div>
+
+                <div class="footer">
+                    <h3>Support</h3>
+                    <p><a href="#">Payment information</a></p>  
+                   <p><a href="#"> Shipping guide</a></p>
+                   <p><a href="#">Wholesale</a></p> 
+                   <p><a href="#"> Drop shipping</a></p>
+                    <p><a href="#">Blog</a></p> 
+                    <p><a href="#">Affiliates</a></p>                  
+                </div>
+
+                <div class="footer">   
+                     <h3>Policies</h3>
+                    <p><a href="#">Terms & conditions</a></p>
+                    <p><a href="#">Return policy</a></p>
+                    <p><a href="#"></a>Privacy</p>
+                    <p><a href="#">Declaration</a></p>
+                    <p><a href="#">Custo</a></p>
+                </div>
+
+                <div class="footer">
+                    <h3>Download The App</h3>
+                    <div class="footer-img">
+                        <div>
+                            <div><img src="https://content1.geekbuying.com/V1.4/en/images/index_images/android_app.png" alt="Eror"></div>
+                        </div>
+                        <div>
+                            <img src="https://content1.geekbuying.com/V1.4/en/images/index_images/app_store.jpg">
+                            <img src="https://content1.geekbuying.com/V1.4/en/images/index_images/google_play.jpg" alt="">
+                            <img src="https://content1.geekbuying.com/V1.4/en/images/index_images/gallery.jpg" alt="">
+                        </div>
+    
+                    </div>
+                           
+                </div>
+            </div>
+
+            <div id="footer-popular">
+                <h3>Popular Searches</h3>
+                <div class="footer-pop">
+                    <div>Greekbuying Coupon</div>
+                    <div> Roborock Q7 Max</div>
+                    <div>Tronsmart Bluetooth Speaker</div>
+                    <div>Windows Mini PC</div>
+                    <div>ENGWE X26</div>
+                    <div>android tv boxes</div>
+                    <div>KugooKirin G2 Pro</div>
+                    <div>LDS Robot Vacuum</div>
+
+                </div>
+            </div>
+            <hr>
+            <div id="footer-logo">
+                    <img src="https://content1.geekbuying.com/V1.4/en/images/shopcart_footicon.png" alt="">
+                <hr>
+                    <p>© 2012-2022 Geekbuying.com. All rights reserved.</p>
+                </div>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
+
+<script>
+    let select= document.getElementById("select");
+    //let select=document.getElementById("head-up")
+    let list= document.getElementById("list");
+
+    select.onclick=function()
+    {
+        list.classList.toggle("open");
+    }
+    
+</script>
