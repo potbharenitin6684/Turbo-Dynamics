@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+    
+    #para {
+        background-color: hsl(0, 100%, 98%);
+        color: hsl(273, 22%, 69%);
+        height: 30px;
+    }
+    
+    #footer {
+        /* border: 1px solid red; */
+        width: 500px;
+        margin-left: 100px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .all-inp {
+        height: 40px;
+        width: 300px;
+        float: right;
+        line-height: 20px;
+    }
+    
+    #main-footer {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    #check {
+        text-align: center;
+    }
+    
+    #btns {
+        text-align: center;
+    }
+    
+    .btnsave {
+        height: 40px;
+        width: 150px;
+        color: white;
+        background-color: blue;
+        font-size: 15px;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .btncancel {
+        height: 40px;
+        width: 150px;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-left: 20px;
+    }
+    
+    #prod-img {
+        height: 100px;
+        width: 100px;
+    }
+    
+    #pro-list {
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding-top: 15px;
+        padding-left: 25px;
+    }
+    
+    .pro-comn {
+        margin-left: 100px;
+    }
+    
+    #ship-delivery {
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .ship-comn {
+        margin: auto;
+        color: hsl(0, 0%, 64%);
+    }
+    
+    #ship-click {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: hsl(210, 4%, 91%);
+        padding-left: 40px;
+    }
+    
+    .cpntxt {
+        height: 25px;
+        width: 350px;
+    }
+    
+    .btncpn {
+        height: 30px;
+        background-color: blue;
+        color: white;
+        border: none;
+    }
+    
+    #coupon {
+        margin-top: 40px;
+        padding-bottom: 40px;
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 20px;
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
+    
+    #cpn-left {
+        /* border: 1px solid red; */
+        margin-left: 450px;
+    }
+    
+    .shipcost {
+        float: right;
+    }
+    
+    .grantot {
+        color: orangered;
+        font-size: 25px;
+        float: right;
+        font-weight: bolder;
+    }
+    
+    #btncpn1 {
+        width: 300px;
+        color: white;
+        background-color: blue;
+        font-size: 20px;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    .imgfooter {
+        height: 50px;
+        width: 100%;
+    }
+    
+    #pro_list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+</style>
+
+<body>
+
+
+    <div>
+        <h3 id="heading">Shipping Address</h3>
+        <p id="para">To ensure delivery and prevent delays, please enter the valid alphabetic character.</p>
+    </div>
+    <div id="main-footer">
+        <div id="footer">
+            <div>
+                First name : <input class="all-inp" required type="text">
+            </div>
+            <br><br>
+            <div>
+                Last Name : <input class="all-inp" required type="text">
+            </div>
+            <br><br>
+            <div>
+                Country/Region:
+                <select class="all-inp">
+                <option value="">India</option>
+                <option value="">France</option>
+                <option value=""> Germany</option>
+                <option value="">Hungary</option>
+                <option value="">Italy</option>
+                <option value="">Portugal</option>
+                <option value="">Spain</option>
+                <option value="">United Kingdom</option>
+                <option value="">United States</option>
+                <option value="">Algeria</option>
+                <option value="">Belgium</option>
+                <option value="">Japan</option>
+                <option value="">China</option>
+            </select>
+            </div>
+            <div>
+                <br><br> State/Province/County:
+                <select class="all-inp">
+        <option value=""></option>
+        <option value=""> Andaman and Nicobar</option>
+        <option value="">Andhra Pradesh</option>
+        <option value="">Arunachal Pradesh</option>
+        <option value="">Assam</option>
+        <option value="">Bihar</option>
+        <option value="">Chandigarh</option>
+        <option value="">Chhattisgarh</option>
+        <option value="">Dadra and Nagar Haveli</option>
+        <option value=""> Goa</option>
+        <option value="">Gujarat</option>
+        <option value="">Jammu and Kashmir</option>
+        <option value="">Maharashtra</option>
+        <option value="">Lakshadweep</option>
+        <option value="">Kerala</option>
+        <option value="">Madhya Pradesh</option>
+</select>
+            </div>
+            <div>
+                <br><br> *City:
+                <select class="all-inp" name="" id="">
+        <option value=""></option>
+        <option value="">Alirajpur </option>
+        <option value="">Ambah</option>
+        <option value="">Anuppur</option>
+        <option value="">Badnagar</option>
+        <option value="">Jabalpur</option>
+        <option value="">Pune </option>
+        <option value="">Mumbai</option>
+        <option value="">Nashik</option>
+        <option value="">Jalgaon</option>
+        <option value="">Aurangabad</option>
+        <option value="">Delhi</option>
+        <option value="">Ujjain</option>
+        <option value="">Jalana</option>
+    </select>
+            </div>
+            <div>
+                <br><br> *Zip/Postal code: <input class="all-inp" type="number">
+
+            </div>
+            <div>
+                <br><br>Address line1: <input class="all-inp" type="text">
+
+            </div>
+            <div>
+                <br><br>Address line2:<input class="all-inp" type="text">
+
+            </div>
+            <div>
+                <br><br> Phone Number <input class="all-inp" type="text">
+            </div><br><br>
+
+            <div id="check">
+                <input type="checkbox">Use as default address
+            </div>
+            <br><br>
+            <div id="btns">
+                <button class="btnsave">Save</button > <button class="btncancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <h3>Product List</h3>
+    <div id="pro-list">
+        <!-- <img id="prod-img" src="https://img.gkbcdn.com/p/2022-05-30/SCULPFUN-30L-Min-Air-Pump-Compressor-EU-Plug-501434-0._w280_.jpg" alt="">
+        <div class="pro-comn">
+            <p> SCULPFUN 30L/Min 200-240V Air Pump Compressor for Laser<br> Engraver, Adjustable Speed Low Noise Low Vibration - EU Plug</p>
+        </div>
+        <div class="pro-comn">
+            <p> ₹ 7085.55</p>
+        </div>
+        <div class="pro-comn">
+            <p>X1</p>
+        </div>
+        <div class="pro-comn">
+
+            <p><b>₹ 7085.55</b></p>
+        </div> -->
+    </div>
+    <h3>Shipping & Delivery</h3>
+    <div id="ship-delivery">
+        <div class="ship-comn">Shipping Methods</div>
+        <div class="ship-comn">Estimated Shipping Time</div>
+        <div class="ship-comn">Shipping Cost</div>
+    </div>
+    <div id="ship-click">
+        <input type="checkbox"> Add Shipping Insurance to your order &nbsp; &nbsp; &nbsp; <span><b > ₹ 220.63</b></span>
+        <p>*Note: The time mentioned above are the shipping days by couriers, not including the order processing days by our warehouse.</p>
+    </div>
+    <div id="coupon">
+        <div class="coupon-applay">
+            <p>Coupon:</p>
+            <input class="cpntxt" type="text" placeholder="Please choose or enter your copon code"> <button class="btncpn">Apply</button>
+        </div>
+        <div id="cpn-left">
+            <p>
+                Order Subtotal :
+                <span class="shipcost">₹ 7085.55</span>
+            </p>
+            <p>
+                Shipping Cost :
+                <span class="shipcost">₹ 0.00</span>
+            </p>
+            <br>
+            <p>
+                Grand Total :
+                <span class="grantot">₹ 7085.55</span>
+            </p>
+            <br>
+            <button id="btncpn1">Place Your Order</button>
+        </div>
+
+    </div>
+    <div>
+        <img class="imgfooter" src="https://content1.geekbuying.com/V1.4/en/images/shopcart_footicon.png" alt="">
+    </div>
+
+</body>
+
+</html>
+<script>
+    let orderdata = JSON.parse(localStorage.getItem("cartitems")) || []
+
+    orderdata.forEach(function(element) {
+        let product = document.createElement("div");
+        product.style.verticalAlign = "centre"
+        product.style.display = "grid";
+        product.style.gridTemplateColumns = repeat(3, 1 fr)
+
+        product.style.width = "100%";
+        product.style.border = "1px solid gray";
+        product.style.marginTop = "20px";
+
+        let img = document.createElement("img");
+        img.src = element.img;
+        img.style.width = "30%";
+        let info = document.createElement("p");
+        info.innerText = element.info;
+        info.style.marginTop = "auto";
+        info.style.marginBottom = "auto";
+        info.style.marginLeft = "-250px";
+        info.style.marginRight = "350px";
+
+        let price = document.createElement("h4");
+        price.innerText = '₹' + element.price;
+        price.style.marginTop = "auto";
+        price.style.marginBottom = "auto";
+        price.style.marginLeft = "-300px"
+
+        product.append(img, info, price)
+        document.querySelector("#pro-list").append(product)
+
+    })
+</script>
