@@ -71,13 +71,6 @@
         width: 100px;
     }
     
-    #pro-list {
-        display: flex;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-        padding-top: 15px;
-        padding-left: 25px;
-    }
-    
     .pro-comn {
         margin-left: 100px;
     }
@@ -154,10 +147,23 @@
         width: 100%;
     }
     
-    #pro_list {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    #pro-list {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        
+    }
+    #pro-list>div{
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+   
+    }
+    #pro-list img{
+        width: 20%;
+    }
+    #pro-list p{
+        width: 50%;
     }
 </style>
 
@@ -324,29 +330,14 @@
 
     orderdata.forEach(function(element) {
         let product = document.createElement("div");
-        product.style.verticalAlign = "centre"
-        product.style.display = "grid";
-        product.style.gridTemplateColumns = repeat(3, 1 fr)
-
-        product.style.width = "100%";
-        product.style.border = "1px solid gray";
-        product.style.marginTop = "20px";
 
         let img = document.createElement("img");
         img.src = element.img;
-        img.style.width = "30%";
         let info = document.createElement("p");
         info.innerText = element.info;
-        info.style.marginTop = "auto";
-        info.style.marginBottom = "auto";
-        info.style.marginLeft = "-250px";
-        info.style.marginRight = "350px";
 
         let price = document.createElement("h4");
         price.innerText = '₹' + element.price;
-        price.style.marginTop = "auto";
-        price.style.marginBottom = "auto";
-        price.style.marginLeft = "-300px"
 
         product.append(img, info, price)
         document.querySelector("#pro-list").append(product)
