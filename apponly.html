@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>App Only</title>
+    <style>
+        .head {
+            height: 50px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 40px;
+           font-weight: bold;
+           font-style: normal;
+        } 
+        .icons {
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: center;
+     }
+     .icons  i {
+         font-size:20px;
+         margin: 0 20px;
+         background-color: rgb(240, 240, 240);
+        padding: 10px;
+        border-radius: 50px;
+        }
+        .icon-name {
+            margin: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-name > p {
+            text-align: center;
+            font-size: 15px;
+        }
+        .middle {
+            height: 60px;
+            width: 95%;
+            margin: auto;
+            display: flex;
+        }
+        .middle > .pelu-box {
+            height: 55px;
+            width: 60%;
+            margin-left: 10px;
+            margin-top: 1px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .price {
+            margin: 17px 0;
+        }
+        .pelu-box > p:nth-child(2){
+            border: 1px solid blue;
+            height: 18px;
+            border-radius: 8px;
+            padding: 0 10px;
+        }
+        .btn {
+            margin: 17px 0;
+        }
+        .btn > button {
+           border-color: grey;
+        }
+        .biju-box {
+            height: 55px;
+            width: 40%;
+            margin-left: 10px;
+            margin-top: 1px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        /* nicheno bhag */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 70px;
+           justify-content: start;
+        }
+        .card {
+            width: 210px;
+            height: 270px;
+            border-radius: 15px;
+            box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+            margin: 10px;
+        }
+        .A {
+            width: 200px;
+            height: 175px;
+            display: flex;
+            margin: auto;
+        }
+        .A > img {
+            width: 180px;
+            height: 170px;
+            margin: auto;
+        }
+        .B {
+            width: 200px;
+            height: 93px;
+            margin: auto;
+        }
+        .abc {
+            display: flex;
+        } 
+        #line-through {
+            margin: 25px;
+           text-decoration: line-through;
+           color: grey;
+           font-size: 15px;
+           margin-left: 5px;
+           margin-bottom: 0;
+        }
+        .abc > h1 {
+            margin-bottom: 5px;
+        }
+        .B > p:nth-child(2){
+            margin: 0 auto;
+        }
+        .B > p:nth-child(1){
+            margin: 0 auto;
+        }
+       
+    </style>
+</head>
+<body>
+        <section class="top">
+            <div class="head">App Exclusive Deals</div>
+            <div class="icons">
+                <div class="icon-name">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <p>Super Deals</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                    <p>Footwear</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-headphones"></i>
+                    <p>Head-Phones</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-laptop"></i>
+                    <p>Laptop</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-shirt"></i>
+                    <p>Fashion</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-bicycle"></i>
+                    <p>Bi-Cycle</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-brands fa-themeco"></i>
+                    <p>Pro - K</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-baby"></i>
+                    <p>Baby care</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-tent"></i>
+                    <p>Outdoors</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <p>Games</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-computer"></i>
+                    <p>Computer</p>
+                </div>
+                <div class="icon-name">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <p>Birthday Stuffs</p>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="pelu-box">
+                    <p>Sort By:</p>
+                    <p>Best Price</p>
+                   <div class="btn">
+                       <button>New arrival</button>
+                   </div>
+                    <div class="price">
+                        <label for="Price">Price: </label>
+                        <select name="price" id="bhav">
+                            <option value="India">1000</option>
+                            <option value="India">1000-1500</option>
+                            <option value="India">1500-3000</option>
+                            <option value="India">3000-10,000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="biju-box">
+                    <p>Filter By</p>
+                    <div class="price">
+                        <label for="Price">Ship From:    </label>
+                        <select name="price" id="bhav">
+                            <option value="India">Europe</option>
+                            <option value="India">India</option>
+                            <option value="India">United Kingdom</option>
+                            <option value="India">China</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bottom">
+            <div class="cards">
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-03-18/tronsmart-element-t6-plus-bluetooth-speaker-black-1574132869322._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Cylindrical Bluetooth</p>
+                        <p>Black color Speaker</p>
+                        <div class="abc">
+                            <h1>₹1099.99</h1>
+                            <p id="line-through">₹1299.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div><div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="A">
+                        <img src="https://img.gkbcdn.com/p/2019-01-31/tronsmart-element-force-portable-bluetooth-speaker-1571993707403._w280_p1_.jpg" alt="photo">
+                    </div>
+                    <div class="B">
+                        <p>Transform Bluetoohth Black</p>
+                        <p>@HRX HighQuality</p>
+                        <div class="abc">
+                            <h1>₹1499.99</h1>
+                            <p id="line-through">₹1999.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+</html>

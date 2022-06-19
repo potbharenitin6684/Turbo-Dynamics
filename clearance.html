@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Coupons</title>
+    <style>
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        .card {
+            width:400px;
+            height: 220px;
+            display: flex;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+        }
+        .card > #image {
+            width: 150px;
+            height: 190px;
+
+        }
+        #text {
+            margin-left: 70px;
+            font-size: large;
+        }
+       .discription {
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+        #text > h1{
+            margin-bottom: 0;
+        }
+        #text > p:nth-child(2){
+            font-weight: bold;
+            margin: 0;
+        }
+        #text > p:nth-child(3){
+            color: grey;
+            font-size: 13px;
+            margin-bottom: 0;   
+        }
+        #text > p:nth-child(4){
+            color: grey;
+            font-size: 13px;
+            margin: 0 auto;
+        }
+        .progress {
+            width: 100px;
+            height:07px;
+            border-radius: 15px;
+            background-color: orangered;
+            margin-left: 10px;
+        }
+        .left {
+            display: flex;
+            justify-content:start;
+            align-items: center;
+            font-size: 13px;
+            color: grey;
+        }
+        .voucher {
+            display: flex;
+            padding:0 10px ;
+            height: 30px;
+            align-items: center;
+            margin-left: -43px;
+            width: 150px;
+            margin-top: 10px;
+        }
+        .voucher > p {
+            margin: 0;
+            font-size: 12px;
+        }
+        .voucher > p:nth-child(2) {
+            background-color: rgb(42, 42, 226);
+            color: white;
+            width: 70px;
+            text-align: center;
+            height: 19px;
+            border-radius: 2px;
+        }
+        .voucher > p:first-child {
+            border: 2px dashed blue;
+            width: 130px;
+            margin-left: 35px;
+            color: red;
+            text-align: center;
+        }
+        .icons {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+     .icons  i {
+         font-size:20px;
+         margin: 0 20px;
+         background-color: rgb(240, 240, 240);
+        padding: 10px;
+        border-radius: 50px;
+        }
+        .icon-name {
+            margin: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-name > p {
+            text-align: center;
+            font-size: 15px;
+        }
+        .bigbox {
+            width: 90%;
+            height: 350px;
+            margin: auto;
+        }
+        .bigbox > img {
+            width: 100%;
+            height: 350px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="vouchers">
+        <div class="bigbox">
+            <img src="https://img.gkbcdn.com/s3/bn/2205/1500x400-629459b62b40c91bd09df69f.jpg" alt="moto_photo">
+        </div>
+        <div class="icons">
+            <div class="icon-name">
+                <i class="fa-solid fa-book"></i>
+                <p>Book</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-solid fa-lightbulb"></i>
+                <p>Lights</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-solid fa-headphones"></i>
+                <p>Head-Phones</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-solid fa-spoon"></i>
+                <p>Spoons</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-duotone fa-hat-cowboy"></i>
+                <p>Tabs</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-brands fa-apple"></i>
+                <p>Apple</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-solid fa-briefcase"></i>
+                <p>Brief-case</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-solid fa-globe"></i>
+                <p>Earth</p>
+            </div>
+            <div class="icon-name">
+                <i class="fa-solid fa-calculator"></i>
+                <p>Calculator</p>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2022-01-12/8e568bb4219e486bbaa9eb8956c1be98-493435-0._w200_.jpg" alt="Wabcam photo">
+                </div>
+                <div id="text">
+                      <h1>₹20789.00</h1>
+                      <p>Black WEbcam WiReLess High Range</p>
+                      <p>From 05-Sept to 6-Oct</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>8JKXZZE</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2021-12-25/T-Bao-T-BOOK-X10-Laptop-15-6-inch-16GB-512GB-EU-Plug-486486-0._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹46704.40</h1>
+                      <p>HP laptop Q-5Model 48inch L.E.D.</p>
+                      <p>From 31-Aug to 30-Nov</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>6DKXXZ</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2022-03-05/Lenovo-Xiaoxin-Pad-Pro-WiFi-Tablet-11-5-inch-Snapdragon-730G-6GB-128GB-497358-0._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹24989.90</h1>
+                      <p>Apple tablet white in colour</p>
+                      <p>From 24-Oct to 30-Nov</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>00JHYUIJK</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2022-01-18/eMeet-Luna-Lite-Portable-Computer-Speaker-VoiceIA-Noise-Reduction-Mode-494154-0._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹1499.99</h1>
+                      <p>Speaker Sky-Blue in Colour waterproof</p>
+                      <p>From 01-JAN to 15-FEB</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>9FFUJXCJ</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2022-03-04/GPD-Pocket-3-Laptop-Mini-Tablet-PC-8-Inch-Screen-N6000-EU-Plug-497319-0._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹67890.90</h1>
+                      <p>DELL laptop Y_UG white colour</p>
+                      <p>From 19-Aug to 30-Nov</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>8UUIJKLN</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2022-03-01/Ajazz-K840T-RGB-Mechanical-Keyboard-84-Keys-Red-Switch-Green-497242-0._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹78786.99</h1>
+                      <p>Keyboard grey in colour high Quality</p>
+                      <p>From 31-Aug to 30-Nov</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>9KKLOPH</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2021-07-20/b5cf7140c9664ffeb3362454c89f8a58-461407-1._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹9999.99</h1>
+                      <p>PS-4 SMAll Size HANDMODE</p>
+                      <p>From 09-March to 10-AUG</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>9Y7HUQWE/p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2022-06-09/bmax-maxpad-i10-pro-unisoc-t310-10-1---screen-tablet-af9c0f-1654748476036._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹67678.45</h1>
+                      <p>i-ball laptop grey colour slim</p>
+                      <p>From 06-JAN TO 06-FEB</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>7YUIOLKJ</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+            <div class="card">
+                <div id="image">
+                    <img src="https://img.gkbcdn.com/p/2021-08-11/huawei-m-pencil-2nd-generation-1628672321898._w200_.jpg" alt="Laptop photo">
+                </div>
+                <div id="text">
+                      <h1>₹78787.00</h1>
+                      <p>XIOMI 10 BLACK Pen</p>
+                      <p>From 06-JULY TO 09-JAN</p>
+                      <div class="left">
+                          <p>100% left</p>
+                          <p class="progress"></p>
+                    </div> 
+                    <div class="voucher">
+                        <p>5TYUIOCV</p>
+                        <p>Copy</p>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
