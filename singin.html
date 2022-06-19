@@ -7,6 +7,236 @@
     <title>SignIn</title>
   </head>
   <style>
+
+header{
+    margin:0;
+    padding:0;
+}
+#head-up{
+    width: 100%;
+    height: 70px;
+    padding: 10px 100px;
+    background-color: #1875d1;
+  
+    text-align: right;
+    font-size: 25px;
+}
+#head-up>ul>li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+   
+}
+#head-up>ul>li>a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#head-down{
+    background-color: #1875d1;
+    width: 100%;
+    height: 120px;
+    padding: 40px 100px;
+    
+}
+#con{
+    display: flex;
+}
+#con>div>img{
+    width: 250px;
+    height: 55px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+.seach-bar{
+    background-color: white;
+    width: 90%;
+    max-width: 700px;
+    height: 55px;
+    display: flex;
+    padding: 5px;   
+    border-radius: 4px;
+    
+}
+#select{
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:black;
+    width: 270px;
+    font-size: 20px;
+    padding: 20px 30px;
+   
+    cursor: pointer;
+    position: relative;
+}
+#select>ul{
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+    grid-template-rows: repeat(6,45px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 24px;
+}
+#select>ul>li{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.seach-bar>input{
+    padding: 10px 25px;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+#select>ul.open{
+    max-height: 300px;
+}
+#logo{
+    display: flex;
+    margin-left: 400px;
+    padding: 10px;
+    gap: 100px;
+    cursor: pointer;
+    size: 50px;
+    font-size: 23px;
+}
+#logo>div>a{
+    color: white;
+    text-decoration: none;
+}
+#logo>div>a>img{
+    width: 20px;
+    height: 12px;
+}
+#logo>div>div>div{
+    color: white;
+}
+#head>hr{
+    border: 2px solid white ;
+}
+#lang{
+    float: right;
+    padding: 0;
+    margin: 0;
+    padding-top: 25px;
+
+}
+#lang>li{
+    background-color: white;
+    padding : 5px;
+    padding-left: 0px;
+   
+    position: relative;
+    list-style: none;
+}
+#lang>li>a{
+    display: block;
+    padding: 0px 15px;
+    color: gray;
+    text-decoration: none;
+    line-height: 20px;
+}
+#lang>li>a:hover{
+    background: #e8eaf6;
+    display: none;
+}
+#lang>li:hover{
+    position: absolute;
+   
+    display: none;
+}
+   /* Dropdown Button */
+        
+   .dropbtn {
+            background-color: rgb(16, 115, 253);
+            color: white;
+            padding: 7px;
+            font-size: 20px;
+            border: none;
+        }
+        /* The container <div> - needed to position the dropdown content */
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 330px;
+            gap: 20px;
+        }
+        /* Dropdown Content (Hidden by Default) */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 260px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        /* Links inside the dropdown */
+        
+        .dropdown-content a {
+            color: black;
+            font-size: 20px;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+        /* Change color of dropdown links on hover */
+        
+        .dropdown-content a:hover {
+            background-color: rgb(234, 239, 242);
+        }
+        /* Show the dropdown menu on hover */
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        
+        .dropdown:hover .dropbtn {
+            background-color:  #1875d1;
+            color: white;
+        }
+        
+        nav {
+            background-color:  #1875d1;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        span {
+            margin-left: 20px;
+            font-size: 23px;
+            
+        }
+        span>a{
+            color: white;
+            text-decoration: none;
+        }
+
+*{
+     display: wrap;
+ }
+ #up{
+     font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    background-color: #e3f2fd;
+}
     form {
       padding: 0px 30px;
       margin: auto;
@@ -106,6 +336,99 @@
   }
   </style>
   <body>
+    <header>
+      <div id="head">
+          <div id="head-up">
+              <ul>
+                  <li><a href="#"><i class="fa fa-mobile "></i>  Save BIG with our app!</a></li>
+                  <li><a href="#">Language</a>
+                       <!-- <ul id="list">
+                          <li><a href="#">English</a></li>
+                          <li><a href="#">Italiano</a></li>
+                          <li><a href="#">Deutech</a></li>
+                          <li><a href="#">Espanol</a></li>
+                          <li><a href="#">Francais</a></li>
+                          <li><a href="#">Portugues</a></li>
+                          <li><a href="#">Slovencina</a></li>
+                          <li><a href="#">Magyar</a></li>
+                          <li><a href="#">Slovenscina</a></li>
+                          <li><a href="#">lietuviu Kalba</a></li>
+                          <li><a href="#">Svenska</a></li>
+                          <li><a href="#">Dansk</a></li>
+                          <li><a href="#">Japanese</a></li>
+
+                      </ul> -->
+                  </li>
+                  <li><a href="#">Support Center</a></li>
+              </ul>
+          </div>
+          
+          <hr>
+
+          <div id="head-down">
+              <div id="con">
+                  <div class="logo"><img src="https://content1.geekbuying.com/V1.4/en/images/indexV7/Geekbuying.png"></div>
+                  <div class="seach-bar">
+                      <div id="select">
+                           <p>All Categories</i>   |</p>
+                           <ul id="list">
+                               <li class="options">All Categories</li>
+                               <li class="options">Smart Home & Garden </li>
+                               <li class="options">Phone Assessories</li>
+                               <li class="options">Computer Tablets & Assessories</li>
+                               <li class="options">Wearable Device</li>
+                               <li class="options">Automobiles & Motorcycles</li>
+                               <li class="options">Sport & Outdoors</li>
+                               <li class="options">consumer Electronics</li>
+                               <li class="options">TV Boxes & Mini PC's</li>
+                               <li class="options">Toys & Hobbies</li>
+                               <li class="options">Security System</li>
+                               <li class="options">Fashion</li>
+   
+                           </ul>
+                       </div>
+                       <input type="search" placeholder="Search a Keywords">
+                   </div>
+                   <div id="logo">
+                      <div><a href="shipedto.html">Ship to<br><img src="data:image/png;base64,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" alt="Error">/INR</a></div>
+                      <div><a href="singin.html"><i class="fa fa-user "></i> sign in</a></div>
+                      <div><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></div>
+                   </div>
+               </div>
+              </div>                
+           </div>
+  </header>
+
+  <nav>
+
+      <div class="dropdown">
+
+          <button class="dropbtn">  &#9776; Categories</button>
+
+          <div class="dropdown-content">
+              <a href="#" id="loc-ware">Local Warehouses</a>
+              <a href="#">Sports & Outdoors</a>
+              <a href="#">Smart Home & Garden</a>
+              <a href="#">Consumer Electronics</a>
+              <a href="#">TV Boxes & mini PCs</a>
+              <a href="#">Computers,Tablets &Accessorises</a>
+              <a href="#">Toys & Hobbies</a>
+              <a href="#">Phines & Accessorises</a>
+              <a href="#">Automobiles & Motorcycles</a>
+              <a href="#">Wearables Devices</a>
+              <a href="#">Security Systems</a>
+              <a href="#">Fashion</a>
+          </div>
+      </div>
+      <span><a href="new.html">New</a> </span>
+      <span><a href="bestselling.html"> Bestselling </a></span>
+      <span><a href=""> Brand </a></span>
+      <span><a href="clearance.html">Clearance</a> </span>
+      <span><a href="deals.html">Deals</a> </span>
+      <span><a href="coupans.html">Coupon</a></span>
+      <span><a href="apponly.html"> App Only</a></span>
+  </nav>
+
     <div>
       <form action="">
         <h4>Sign In</h4>
